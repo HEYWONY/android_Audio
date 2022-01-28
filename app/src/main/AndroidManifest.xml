@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.a220128_audio">
+    <!-- 녹음 관련 필수사항 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <!-- 옵션 사항 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
