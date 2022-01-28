@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //https://developer.android.com/guide/topics/media/media-formats
     public void mOnClick(View v) {
         switch (v.getId()) {
             case R.id.btnRecord: //녹음 시작 or 중지
