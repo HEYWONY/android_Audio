@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     protected  void onDestroy() {
         super.onDestroy();
         if (mRecorder != null) {
-            mRecorder.release();
+            mRecorder.release(); // 사용하는데 제한을 둔다. (현재 형태에 따라서 실행이 되고, 아니 되고) => 얘는 딱히 표준이 존재하지는 않음
             mRecorder = null;
         }
         if (mPlayer != null) {
@@ -61,9 +61,9 @@ public class MainActivity extends AppCompatActivity {
                     } else
                         mRecorder.reset();
                     try { // 1 부분 제외하고 나머지는 모든 안드로이드 폰에서 동일함
-                        mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC); // 1
-                        mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP); // 1
-                        mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_WB); // 1
+                        mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC); // 자체 마이크 (1)
+                        mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP); // (1)
+                        mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_WB); // (1)
                         mRecorder.setOutputFile(mFile.getAbsolutePath());
                         mRecorder.prepare();
                         mRecorder.start();
